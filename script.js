@@ -9,10 +9,33 @@ window.addEventListener("DOMContentLoaded", () => {
   fetch(localJsonFile)
     .then((response) => response.json()) // and the response we get is in json format
     .then((data) => {
-        console.log(data)
-        const div = document.createElement("div");
-        div.innerHTML =  `${data.title} ${data.timeframes} is a `
-      });
+
+
+        // Assuming you have the JSON data assigned to the 'data' variable
+
+const categorySections = document.querySelectorAll('.title');
+
+data.forEach((category, index) => {
+  const title = category.title;
+  const current = category.timeframes.daily.current;
+  const previous = category.timeframes.daily.previous;
+
+  const categoryElement = document.createElement('div');
+  const titleElement = document.createElement('h2');
+  const currentElement = document.createElement('p');
+  const previousElement = document.createElement('p');
+
+  titleElement.textContent = title;
+  currentElement.textContent = `Current: ${current}`;
+  previousElement.textContent = `Previous: ${previous}`;
+
+  categoryElement.appendChild(titleElement);
+  categoryElement.appendChild(currentElement);
+  categoryElement.appendChild(previousElement);
+
+  categorySections[index].appendChild(categoryElement);
+});
     });
+});
 
 
