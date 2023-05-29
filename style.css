@@ -1,8 +1,10 @@
+  @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
 * {
   padding: 0;
   margin: 0;
   position: relative;
   color: white;
+  font-family: 'Rubik', sans-serif;
 }
 span {
   display: block;
@@ -91,7 +93,7 @@ li:hover, .active {
   background-color: hsl(235, 46%, 20%);
   height: 7em;
   border-radius: 10px;
-  padding: 0;
+  padding: 10px;
   margin-top: -15px;
 }
 .exercise-img,
@@ -102,8 +104,26 @@ li:hover, .active {
 .selfcare-img {
   width: 30%;
 }
+.categoryElement {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
 .data {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+}
+.dataElement {
+  font-size: 50px;
+  font-weight: 300;
+}
+.dataContainer {
+  display: flex;
+  font-size: 15px;
+}
+.title {
+  font-size: 18px;
+  font-weight: 300;
 }

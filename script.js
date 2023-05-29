@@ -18,6 +18,12 @@ window.addEventListener("DOMContentLoaded", () => {
       const monthlyButton = document.getElementById("monthlyButton");
 
       let timeframe = "daily"; // Default timeframe
+      // Define the distinctive texts for each timeframe
+      const timeframeTexts = {
+        daily: "Yesterday - ",
+        weekly: "Last week - ",
+        monthly: "Last year - ",
+      };
 
       function displayData() {
         // Clear the container before displaying new data
@@ -30,14 +36,33 @@ window.addEventListener("DOMContentLoaded", () => {
           const timeframeData = category.timeframes[timeframe];
 
           const categoryElement = document.createElement("div");
-          const titleElement = document.createElement("h2");
-          const dataElement = document.createElement("p");
+          const titleElement = document.createElement("p");
+          const titlediv = document.createElement("div")
+          const positionaldiv = document.createElement("div")
+          const dataElement = document.createElement("h2");
+          const dataContainer = document.createElement("div");
+          const dataElement2 = document.createElement("span");
+          const timeframeText = document.createElement("span");
 
           titleElement.textContent = title;
-          dataElement.textContent = `Current: ${timeframeData.current}, Previous: ${timeframeData.previous}`;
+          dataElement.textContent = `${timeframeData.current}hrs`;
+          dataElement2.textContent = `${timeframeData.previous}hrs`;
+          timeframeText.textContent = timeframeTexts[timeframe]; // Use the corresponding text based on the timeframe
+          dataElement.classList.add("dataElement");
+          dataContainer.classList.add("dataContainer")
+          titleElement.classList.add("title")
+          categoryElement.classList.add("categoryElement")
 
-          categoryElement.appendChild(titleElement);
-          categoryElement.appendChild(dataElement);
+          titlediv.appendChild(titleElement)
+
+          dataContainer.appendChild(timeframeText)
+          dataContainer.appendChild(dataElement2)
+
+          positionaldiv.appendChild(dataElement)
+          positionaldiv.appendChild(dataContainer)
+
+          categoryElement.appendChild(titlediv); 
+          categoryElement.appendChild(positionaldiv);
 
           categorySections[index].appendChild(categoryElement);
         });
