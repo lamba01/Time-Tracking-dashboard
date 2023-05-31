@@ -48,10 +48,14 @@ window.addEventListener("DOMContentLoaded", () => {
           dataElement.textContent = `${timeframeData.current}hrs`;
           dataElement2.textContent = `${timeframeData.previous}hrs`;
           timeframeText.textContent = timeframeTexts[timeframe]; // Use the corresponding text based on the timeframe
+          
+          // Add styling from css to data displayed
           dataElement.classList.add("dataElement");
           dataContainer.classList.add("dataContainer")
           titleElement.classList.add("title")
           categoryElement.classList.add("categoryElement")
+          timeframeText.classList.add("timeframeText")
+          dataElement2.classList.add("dataElement2")
 
           titlediv.appendChild(titleElement)
 

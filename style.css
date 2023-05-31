@@ -1,43 +1,53 @@
-  @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
 * {
   padding: 0;
   margin: 0;
-  position: relative;
   color: white;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
 }
-span {
-  display: block;
+body {
+  background-color: hsl(226, 43%, 10%);
+  width: 100vw;
 }
-
-main {
-  margin: auto;
-  display: grid;
+.container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
   justify-content: space-between;
-  width: 60%;
-  align-content: center;
-  height: 100vh;
-  grid-template-columns: auto auto auto auto;
+  width: 70%;
+}
+.user {
+  width: 20%;
 }
 .user-profile {
   background-color: hsl(246, 80%, 60%);
-  padding: 20px;
+  padding: 10%;
   border-radius: 5px;
+  z-index: 3;
 }
 .user-profile h1 {
-  margin-bottom: 50px;
+  padding-bottom: 50%;
+  font-weight: 300;
 }
-.jeremy {
-  width: 30%;
-  height: 30%;
-  border: 2px solid white;
-  border-radius: 50%;
-  margin-bottom: 20px;
+.user-profile span {
+  font-weight: 300;
+  font-size: 10px;
+  color: hsl(236, 100%, 87%);
 }
 .time-frame {
   background-color: hsl(235, 46%, 20%);
-  padding: 20px;
   border-radius: 5px;
+  padding: 20px 20px 0px 20px;
+  margin-top: -10px;
+}
+.jeremy {
+  width: 40%;
+  height: 40%;
+  border: 2px solid white;
+  border-radius: 50%;
+  margin-bottom: 20px;
 }
 ul {
   list-style-type: none;
@@ -46,20 +56,33 @@ ul {
   justify-content: space-between;
 }
 li {
-    cursor: pointer;
-    color: hsl(235, 45%, 61%);
+  cursor: pointer;
+  color: hsl(235, 45%, 61%);
+  text-transform: capitalize;
+  font-size: 12px;
+  padding: 0px 0px 10px 0px;
 }
-li:hover, .active {
-    color: white;
+li:hover,
+.active {
+  color: white;
 }
-
+span {
+  display: block;
+}
+.work,
+.play,
+.study,
+.exercise,
+.social,
+.self-care {
+  width: 30%;
+}
 .exercise-hero,
 .work-hero,
 .play-hero,
 .social-hero,
 .study-hero,
 .self-hero {
-  width: 150px;
   height: 40px;
   border-radius: 10px;
   display: flex;
@@ -93,37 +116,45 @@ li:hover, .active {
   background-color: hsl(235, 46%, 20%);
   height: 7em;
   border-radius: 10px;
-  padding: 10px;
   margin-top: -15px;
+  position: relative;
+  padding-left: 20px;
+  padding-bottom: 20px;
 }
-.exercise-img,
-.work-img,
-.play-img,
-.social-img,
-.study-img,
-.selfcare-img {
-  width: 30%;
+.mini-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 75%;
+}
+.data,
+.data2 {
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.dataElement {
+  font-size: 30px;
+  font-weight: 300;
 }
 .categoryElement {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   height: 100%;
-}
-.data {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-}
-.dataElement {
-  font-size: 50px;
-  font-weight: 300;
+  background-color: hsl(235, 46%, 20%);
 }
 .dataContainer {
   display: flex;
-  font-size: 15px;
+  font-size: 10px;
+  font-weight: 500;
 }
 .title {
-  font-size: 18px;
-  font-weight: 300;
+  font-size: 15px;
+  font-weight: 500;
 }
+.timeframeText,
+.dataElement2 {
+  color: hsl(236, 100%, 87%);
+}
+
