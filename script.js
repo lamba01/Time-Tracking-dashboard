@@ -22,7 +22,7 @@ window.addEventListener("DOMContentLoaded", () => {
       const timeframeTexts = {
         daily: "Yesterday - ",
         weekly: "Last week - ",
-        monthly: "Last year - ",
+        monthly: "Last month - ",
       };
 
       function displayData() {
@@ -37,8 +37,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
           const categoryElement = document.createElement("div");
           const titleElement = document.createElement("p");
-          const titlediv = document.createElement("div")
-          const positionaldiv = document.createElement("div")
+          const titlediv = document.createElement("div");
+          const positionaldiv = document.createElement("div");
           const dataElement = document.createElement("h2");
           const dataContainer = document.createElement("div");
           const dataElement2 = document.createElement("span");
@@ -48,24 +48,25 @@ window.addEventListener("DOMContentLoaded", () => {
           dataElement.textContent = `${timeframeData.current}hrs`;
           dataElement2.textContent = `${timeframeData.previous}hrs`;
           timeframeText.textContent = timeframeTexts[timeframe]; // Use the corresponding text based on the timeframe
-          
+
           // Add styling from css to data displayed
           dataElement.classList.add("dataElement");
-          dataContainer.classList.add("dataContainer")
-          titleElement.classList.add("title")
-          categoryElement.classList.add("categoryElement")
-          timeframeText.classList.add("timeframeText")
-          dataElement2.classList.add("dataElement2")
+          dataContainer.classList.add("dataContainer");
+          titleElement.classList.add("title");
+          categoryElement.classList.add("categoryElement");
+          timeframeText.classList.add("timeframeText");
+          dataElement2.classList.add("dataElement2");
+          positionaldiv.classList.add("positionaldiv");
 
-          titlediv.appendChild(titleElement)
+          titlediv.appendChild(titleElement);
 
-          dataContainer.appendChild(timeframeText)
-          dataContainer.appendChild(dataElement2)
+          dataContainer.appendChild(timeframeText);
+          dataContainer.appendChild(dataElement2);
 
-          positionaldiv.appendChild(dataElement)
-          positionaldiv.appendChild(dataContainer)
+          positionaldiv.appendChild(dataElement);
+          positionaldiv.appendChild(dataContainer);
 
-          categoryElement.appendChild(titlediv); 
+          categoryElement.appendChild(titlediv);
           categoryElement.appendChild(positionaldiv);
 
           categorySections[index].appendChild(categoryElement);
@@ -94,15 +95,20 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // timeframe selection
 let timeframe = document.querySelectorAll("li");
-window.onload = function testing() {
+window.onload = function () {
+  // Add the active class to daily by default
+  timeframe[0].classList.add("active");
+
   for (var i = 0; i < timeframe.length; i++) {
     timeframe[i].addEventListener("click", function () {
       var current = document.getElementsByClassName("active");
       if (current.length > 0) {
-        current[0].className = current[0].className.replace("active", "");
+        current[0].classList.remove("active");
       }
       // Add the active class to the current/clicked timeframe
-      this.className += "active";
+      this.classList.add("active");
     });
   }
 };
+
+
