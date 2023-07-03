@@ -8,6 +8,7 @@ This is a solution to the [Time tracking dashboard challenge on Frontend Mentor]
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Links](#links)
+  - [Screenshot](#screenshot)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
@@ -25,7 +26,9 @@ Users should be able to:
 - See hover states for all interactive elements on the page
 - Switch between viewing Daily, Weekly, and Monthly stats
 
+### Screenshot
 
+![](./screenshot4.png)
 ### Links
 
 - Solution URL: (https://github.com/lamba01/Time-Tracking-dashboard)
